@@ -13,7 +13,7 @@ else {
         require_once('../common/currency_1db.php');
     }elseif ($currency->SIGUNNM == "고양시") {
         require_once('../common/currency_1db.php');
-    } elseif ($currency->SIGUNNM == "과천시") {
+    }elseif ($currency->SIGUNNM == "과천시") {
         require_once('../common/currency_1db.php');
     }elseif ($currency->SIGUNNM == "광명시") {
         require_once('../common/currency_1db.php');
@@ -72,8 +72,8 @@ else {
     }elseif ($currency->SIGUNNM == "성남시") {
         require_once('../common/currency_5db.php');
     }
-    if ($result1) {
-        echo "complete";
+    if ($sql1) {
+        echo "";
     } else {
         echo "error";
     }

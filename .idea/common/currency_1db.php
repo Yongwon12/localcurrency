@@ -1,7 +1,6 @@
 <?php
 ini_set('memory_limit', '-1');
-$sql1 = $conn->prepare("select * from currency_1 where SIGUNNM = ?");
-$sql1->bind_param('s', $currency->SIGUNNM );
+$sql1 = "select * from currency_1 where SIGUNNM = '" . $currency->SIGUNNM . "'";
 $result1 = mysqli_query($conn, $sql1);
 $data1 = array();
 while ($row1 = mysqli_fetch_array($result1)) {
@@ -15,6 +14,6 @@ while ($row1 = mysqli_fetch_array($result1)) {
         'LATITUDE'=>$row1[6],
         'LONGITUDE'=>$row1[7]));
 }
-$json1 = json_encode(array('가맹점 정보' => $data1), JSON_UNESCAPED_UNICODE, JSON_PRETTY_PRINT);
+$json1 = json_encode(array('storeList' => $data1), JSON_UNESCAPED_UNICODE, JSON_PRETTY_PRINT);
 print_r($json1);
 ?>
